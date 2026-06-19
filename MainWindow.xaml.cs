@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿// Учебная практика УП.03.01. Ветка dev. Изменения для демонстрации ветвления.
+using System.Windows;
 
 namespace UfanetApp
 {
