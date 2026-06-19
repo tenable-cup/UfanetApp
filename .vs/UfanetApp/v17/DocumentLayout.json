@@ -1,0 +1,152 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|c:\\users\\\u0443\u0447\u0435\u0431\u0430\\ufanetapp\\addeditemployeewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|solutionrelative:addeditemployeewindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|c:\\users\\\u0443\u0447\u0435\u0431\u0430\\ufanetapp\\employeeswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|solutionrelative:employeeswindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|c:\\users\\\u0443\u0447\u0435\u0431\u0430\\ufanetapp\\employeeswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|solutionrelative:employeeswindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|c:\\users\\\u0443\u0447\u0435\u0431\u0430\\ufanetapp\\addeditemployeewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|solutionrelative:addeditemployeewindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|c:\\users\\\u0443\u0447\u0435\u0431\u0430\\ufanetapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|c:\\users\\\u0443\u0447\u0435\u0431\u0430\\ufanetapp\\ufanetmodel.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|solutionrelative:ufanetmodel.context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|c:\\users\\\u0443\u0447\u0435\u0431\u0430\\ufanetapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|c:\\users\\\u0443\u0447\u0435\u0431\u0430\\ufanetapp\\ufanetmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{6E867584-1741-4B5A-841E-6CA25129E137}|UfanetApp.csproj|solutionrelative:ufanetmodel.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddEditEmployeeWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\AddEditEmployeeWindow.xaml.cs",
+              "RelativeDocumentMoniker": "AddEditEmployeeWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\AddEditEmployeeWindow.xaml.cs",
+              "RelativeToolTip": "AddEditEmployeeWindow.xaml.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwEAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T18:32:30.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AddEditEmployeeWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\AddEditEmployeeWindow.xaml",
+              "RelativeDocumentMoniker": "AddEditEmployeeWindow.xaml",
+              "ToolTip": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\AddEditEmployeeWindow.xaml",
+              "RelativeToolTip": "AddEditEmployeeWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-28T18:32:16.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EmployeesWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\EmployeesWindow.xaml.cs",
+              "RelativeDocumentMoniker": "EmployeesWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\EmployeesWindow.xaml.cs",
+              "RelativeToolTip": "EmployeesWindow.xaml.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAkwCAAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T18:31:39.318Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeesWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\EmployeesWindow.xaml",
+              "RelativeDocumentMoniker": "EmployeesWindow.xaml",
+              "ToolTip": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\EmployeesWindow.xaml",
+              "RelativeToolTip": "EmployeesWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-28T18:31:27.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UfanetModel.edmx [Diagram1]",
+              "DocumentMoniker": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\UfanetModel.edmx",
+              "RelativeDocumentMoniker": "UfanetModel.edmx",
+              "ToolTip": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\UfanetModel.edmx [Diagram1]",
+              "RelativeToolTip": "UfanetModel.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2026-04-28T18:30:08.325Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\MainWindow.xaml.cs",
+              "RelativeToolTip": "MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T18:28:32.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UfanetModel.Context.cs",
+              "DocumentMoniker": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\UfanetModel.Context.cs",
+              "RelativeDocumentMoniker": "UfanetModel.Context.cs",
+              "ToolTip": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\UfanetModel.Context.cs",
+              "RelativeToolTip": "UfanetModel.Context.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-28T18:32:37.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "MainWindow.xaml",
+              "ToolTip": "C:\\Users\\\u0423\u0447\u0435\u0431\u0430\\UfanetApp\\MainWindow.xaml",
+              "RelativeToolTip": "MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-04-28T18:28:32.841Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

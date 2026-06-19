@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище UfanetModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="employees">
+          <Key>
+            <PropertyRef Name="employee_id" />
+          </Key>
+          <Property Name="employee_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="last_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="patronymic" Type="varchar" MaxLength="50" />
+          <Property Name="position" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="department" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="20" />
+          <Property Name="email" Type="varchar" MaxLength="100" />
+          <Property Name="hire_date" Type="date" />
+          <Property Name="salary" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="is_active" Type="bit" />
+        </EntityType>
+        <EntityType Name="equipment">
+          <Key>
+            <PropertyRef Name="equipment_id" />
+          </Key>
+          <Property Name="equipment_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="equipment_name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="model" Type="varchar" MaxLength="50" />
+          <Property Name="serial_number" Type="varchar" MaxLength="50" />
+          <Property Name="type" Type="varchar" MaxLength="50" />
+          <Property Name="status" Type="varchar" MaxLength="30" />
+          <Property Name="is_active" Type="bit" />
+        </EntityType>
+        <EntityType Name="requests">
+          <Key>
+            <PropertyRef Name="request_id" />
+          </Key>
+          <Property Name="request_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="request_number" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="subscriber_id" Type="int" Nullable="false" />
+          <Property Name="employee_id" Type="int" Nullable="false" />
+          <Property Name="tariff_id" Type="int" Nullable="false" />
+          <Property Name="request_date" Type="date" />
+          <Property Name="completion_date" Type="date" />
+          <Property Name="status" Type="varchar" MaxLength="30" />
+          <Property Name="comment" Type="text" />
+        </EntityType>
+        <EntityType Name="subscribers">
+          <Key>
+            <PropertyRef Name="subscriber_id" />
+          </Key>
+          <Property Name="subscriber_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="personal_account" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="last_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="first_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="patronymic" Type="varchar" MaxLength="50" />
+          <Property Name="phone" Type="varchar" MaxLength="20" />
+          <Property Name="address" Type="varchar" MaxLength="255" />
+          <Property Name="connection_date" Type="date" />
+          <Property Name="tariff_name" Type="varchar" MaxLength="50" />
+          <Property Name="balance" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="is_active" Type="bit" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="tariffs">
+          <Key>
+            <PropertyRef Name="tariff_id" />
+          </Key>
+          <Property Name="tariff_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="tariff_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="speed_mbps" Type="int" Nullable="false" />
+          <Property Name="price" Type="decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="description" Type="text" />
+          <Property Name="is_active" Type="bit" />
+        </EntityType>
+        <Association Name="FK_requests_employees">
+          <End Role="employees" Type="Self.employees" Multiplicity="1" />
+          <End Role="requests" Type="Self.requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employees">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="requests">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_requests_subscribers">
+          <End Role="subscribers" Type="Self.subscribers" Multiplicity="1" />
+          <End Role="requests" Type="Self.requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subscribers">
+              <PropertyRef Name="subscriber_id" />
+            </Principal>
+            <Dependent Role="requests">
+              <PropertyRef Name="subscriber_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_requests_tariffs">
+          <End Role="tariffs" Type="Self.tariffs" Multiplicity="1" />
+          <End Role="requests" Type="Self.requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tariffs">
+              <PropertyRef Name="tariff_id" />
+            </Principal>
+            <Dependent Role="requests">
+              <PropertyRef Name="tariff_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище UfanetModelContainer">
+          <EntitySet Name="employees" EntityType="Self.employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="equipment" EntityType="Self.equipment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="requests" EntityType="Self.requests" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="subscribers" EntityType="Self.subscribers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tariffs" EntityType="Self.tariffs" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_requests_employees" Association="Self.FK_requests_employees">
+            <End Role="employees" EntitySet="employees" />
+            <End Role="requests" EntitySet="requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_requests_subscribers" Association="Self.FK_requests_subscribers">
+            <End Role="subscribers" EntitySet="subscribers" />
+            <End Role="requests" EntitySet="requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_requests_tariffs" Association="Self.FK_requests_tariffs">
+            <End Role="tariffs" EntitySet="tariffs" />
+            <End Role="requests" EntitySet="requests" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="UfanetModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="employees">
+          <Key>
+            <PropertyRef Name="employee_id" />
+          </Key>
+          <Property Name="employee_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="department" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="hire_date" Type="DateTime" Precision="0" />
+          <Property Name="salary" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="is_active" Type="Boolean" />
+          <NavigationProperty Name="requests" Relationship="Self.FK_requests_employees" FromRole="employees" ToRole="requests" />
+        </EntityType>
+        <EntityType Name="equipment">
+          <Key>
+            <PropertyRef Name="equipment_id" />
+          </Key>
+          <Property Name="equipment_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="equipment_name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="model" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="serial_number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="is_active" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="requests">
+          <Key>
+            <PropertyRef Name="request_id" />
+          </Key>
+          <Property Name="request_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="request_number" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="subscriber_id" Type="Int32" Nullable="false" />
+          <Property Name="employee_id" Type="Int32" Nullable="false" />
+          <Property Name="tariff_id" Type="Int32" Nullable="false" />
+          <Property Name="request_date" Type="DateTime" Precision="0" />
+          <Property Name="completion_date" Type="DateTime" Precision="0" />
+          <Property Name="status" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="employees" Relationship="Self.FK_requests_employees" FromRole="requests" ToRole="employees" />
+          <NavigationProperty Name="subscribers" Relationship="Self.FK_requests_subscribers" FromRole="requests" ToRole="subscribers" />
+          <NavigationProperty Name="tariffs" Relationship="Self.FK_requests_tariffs" FromRole="requests" ToRole="tariffs" />
+        </EntityType>
+        <EntityType Name="subscribers">
+          <Key>
+            <PropertyRef Name="subscriber_id" />
+          </Key>
+          <Property Name="subscriber_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="personal_account" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="address" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="connection_date" Type="DateTime" Precision="0" />
+          <Property Name="tariff_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="balance" Type="Decimal" Precision="10" Scale="2" />
+          <Property Name="is_active" Type="Boolean" />
+          <NavigationProperty Name="requests" Relationship="Self.FK_requests_subscribers" FromRole="subscribers" ToRole="requests" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="tariffs">
+          <Key>
+            <PropertyRef Name="tariff_id" />
+          </Key>
+          <Property Name="tariff_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="tariff_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="speed_mbps" Type="Int32" Nullable="false" />
+          <Property Name="price" Type="Decimal" Precision="10" Scale="2" Nullable="false" />
+          <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="is_active" Type="Boolean" />
+          <NavigationProperty Name="requests" Relationship="Self.FK_requests_tariffs" FromRole="tariffs" ToRole="requests" />
+        </EntityType>
+        <Association Name="FK_requests_employees">
+          <End Role="employees" Type="Self.employees" Multiplicity="1" />
+          <End Role="requests" Type="Self.requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="employees">
+              <PropertyRef Name="employee_id" />
+            </Principal>
+            <Dependent Role="requests">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_requests_subscribers">
+          <End Role="subscribers" Type="Self.subscribers" Multiplicity="1" />
+          <End Role="requests" Type="Self.requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="subscribers">
+              <PropertyRef Name="subscriber_id" />
+            </Principal>
+            <Dependent Role="requests">
+              <PropertyRef Name="subscriber_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_requests_tariffs">
+          <End Role="tariffs" Type="Self.tariffs" Multiplicity="1" />
+          <End Role="requests" Type="Self.requests" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tariffs">
+              <PropertyRef Name="tariff_id" />
+            </Principal>
+            <Dependent Role="requests">
+              <PropertyRef Name="tariff_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="UfanetEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="employees" EntityType="Self.employees" />
+          <EntitySet Name="equipment" EntityType="Self.equipment" />
+          <EntitySet Name="requests" EntityType="Self.requests" />
+          <EntitySet Name="subscribers" EntityType="Self.subscribers" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="tariffs" EntityType="Self.tariffs" />
+          <AssociationSet Name="FK_requests_employees" Association="Self.FK_requests_employees">
+            <End Role="employees" EntitySet="employees" />
+            <End Role="requests" EntitySet="requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_requests_subscribers" Association="Self.FK_requests_subscribers">
+            <End Role="subscribers" EntitySet="subscribers" />
+            <End Role="requests" EntitySet="requests" />
+          </AssociationSet>
+          <AssociationSet Name="FK_requests_tariffs" Association="Self.FK_requests_tariffs">
+            <End Role="tariffs" EntitySet="tariffs" />
+            <End Role="requests" EntitySet="requests" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище UfanetModelContainer" CdmEntityContainer="UfanetEntities">
+          <EntitySetMapping Name="employees">
+            <EntityTypeMapping TypeName="UfanetModel.employees">
+              <MappingFragment StoreEntitySet="employees">
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="department" ColumnName="department" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="hire_date" ColumnName="hire_date" />
+                <ScalarProperty Name="salary" ColumnName="salary" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="equipment">
+            <EntityTypeMapping TypeName="UfanetModel.equipment">
+              <MappingFragment StoreEntitySet="equipment">
+                <ScalarProperty Name="equipment_id" ColumnName="equipment_id" />
+                <ScalarProperty Name="equipment_name" ColumnName="equipment_name" />
+                <ScalarProperty Name="model" ColumnName="model" />
+                <ScalarProperty Name="serial_number" ColumnName="serial_number" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="requests">
+            <EntityTypeMapping TypeName="UfanetModel.requests">
+              <MappingFragment StoreEntitySet="requests">
+                <ScalarProperty Name="request_id" ColumnName="request_id" />
+                <ScalarProperty Name="request_number" ColumnName="request_number" />
+                <ScalarProperty Name="subscriber_id" ColumnName="subscriber_id" />
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="tariff_id" ColumnName="tariff_id" />
+                <ScalarProperty Name="request_date" ColumnName="request_date" />
+                <ScalarProperty Name="completion_date" ColumnName="completion_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="subscribers">
+            <EntityTypeMapping TypeName="UfanetModel.subscribers">
+              <MappingFragment StoreEntitySet="subscribers">
+                <ScalarProperty Name="subscriber_id" ColumnName="subscriber_id" />
+                <ScalarProperty Name="personal_account" ColumnName="personal_account" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="patronymic" ColumnName="patronymic" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="connection_date" ColumnName="connection_date" />
+                <ScalarProperty Name="tariff_name" ColumnName="tariff_name" />
+                <ScalarProperty Name="balance" ColumnName="balance" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="UfanetModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tariffs">
+            <EntityTypeMapping TypeName="UfanetModel.tariffs">
+              <MappingFragment StoreEntitySet="tariffs">
+                <ScalarProperty Name="tariff_id" ColumnName="tariff_id" />
+                <ScalarProperty Name="tariff_name" ColumnName="tariff_name" />
+                <ScalarProperty Name="speed_mbps" ColumnName="speed_mbps" />
+                <ScalarProperty Name="price" ColumnName="price" />
+                <ScalarProperty Name="description" ColumnName="description" />
+                <ScalarProperty Name="is_active" ColumnName="is_active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

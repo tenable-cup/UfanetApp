@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9db5b168738c4b0bbf9e465f09c5530c" Name="Diagram1">
+        <EntityTypeShape EntityType="UfanetModel.employees" Width="1.5" PointX="0.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="UfanetModel.equipment" Width="1.5" PointX="4.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UfanetModel.requests" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="UfanetModel.subscribers" Width="1.5" PointX="1.125" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UfanetModel.sysdiagrams" Width="1.5" PointX="10.625" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UfanetModel.tariffs" Width="1.5" PointX="4.125" PointY="4.125" IsExpanded="true" />
+        <AssociationConnector Association="UfanetModel.FK_requests_employees" ManuallyRouted="false" />
+        <AssociationConnector Association="UfanetModel.FK_requests_subscribers" ManuallyRouted="false" />
+        <AssociationConnector Association="UfanetModel.FK_requests_tariffs" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
